@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: hourglass-medipulse
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PATIENT_PASSCODE
+        sync: false
+      - key: DOCTOR_PASSCODE
+        sync: false
+      - key: CLINIC_PASSCODE
+        sync: false

@@ -1,0 +1,6 @@
+{
+  "name": "Healthcare Management System",
+  "description": "Healthcare management platform with Python processing engine, patient & doctor portals, consent control, longitudinal health timeline, and clinical records analysis.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
