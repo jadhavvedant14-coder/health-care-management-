@@ -3,7 +3,6 @@ import path from "path";
 import fs from "fs";
 import { execFile } from "child_process";
 import { promisify } from "util";
-import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 import { clinicalCore } from "./src/server/clinicalCore";
@@ -693,6 +692,7 @@ Return JSON:
 
   // ================= VITE / STATIC SERVING =================
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: {
         middlewareMode: true,
